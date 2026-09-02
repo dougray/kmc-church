@@ -7,6 +7,10 @@
 <meta name="description" content="Kingsbury Methodist Church is a Global Methodist congregation in Kingsbury, Texas. Worship with us Sundays at 9:30 AM, 7035 FM 2438.">
 <meta name="theme-color" content="#2d4739">
 
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/apple-touch-icon.png" sizes="180x180">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kingsbury Methodist Church">
 <meta property="og:description" content="A Global Methodist church in Kingsbury, Texas. Worship Sundays at 9:30 AM.">
@@ -194,6 +198,44 @@
   }
   .card p { color: var(--ink-soft); font-size: .95rem; }
 
+  /* ---------- photo ---------- */
+  .photo-band { background: var(--green-deep); }
+  .photo-band figure { margin: 0; }
+  .photo-band img {
+    display: block;
+    width: 100%;
+    height: clamp(14rem, 38vw, 26rem);
+    object-fit: cover;
+    object-position: center 44%;
+  }
+  .photo-band figcaption {
+    color: #a9bcae;
+    font-size: .82rem;
+    text-align: center;
+    padding: .8rem 1.5rem;
+  }
+
+  /* ---------- map ---------- */
+  .map-frame {
+    margin-top: 1.75rem;
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #e8e4da;
+    line-height: 0;
+  }
+  .map-frame iframe {
+    display: block;
+    width: 100%;
+    height: clamp(18rem, 45vw, 26rem);
+    border: 0;
+  }
+  .map-note {
+    font-size: .85rem;
+    color: var(--ink-soft);
+    margin-top: .7rem;
+  }
+
   /* ---------- contact list ---------- */
   .contact-list { list-style: none; margin: 0; padding: 0; }
   .contact-list li {
@@ -216,6 +258,38 @@
   .contact-list .value { font-size: 1.02rem; }
   address { font-style: normal; }
 
+  /* ---------- socials ---------- */
+  .socials {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+  }
+  .social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .75rem 1.3rem .75rem 1rem;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 2rem;
+    text-decoration: none;
+    color: var(--green-deep);
+    font-weight: 600;
+    font-size: .95rem;
+    transition: border-color .15s ease, background-color .15s ease;
+  }
+  .social-btn:hover { background: #fff; border-color: var(--green-soft); }
+  .social-btn svg { width: 22px; height: 22px; flex: none; fill: var(--green); }
+  .social-btn .sub {
+    display: block;
+    font-weight: 400;
+    font-size: .78rem;
+    color: var(--ink-soft);
+  }
+
   /* ---------- footer ---------- */
   footer {
     background: var(--green-deep);
@@ -227,6 +301,13 @@
   footer a { color: #e6d4b4; }
   footer p { max-width: none; margin: 0 auto .5rem; }
   footer .fine { color: #8ea294; font-size: .82rem; margin-top: 1.2rem; }
+
+  .gmc-mark {
+    display: block;
+    width: min(15rem, 70%);
+    height: auto;
+    margin: 0 auto 1.4rem;
+  }
 
   @media (max-width: 30rem) {
     .btns .btn { flex: 1 1 100%; text-align: center; }
@@ -250,6 +331,13 @@
     </div>
   </div>
 </header>
+
+<figure class="photo-band">
+  <img src="assets/church.jpg"
+       alt="The Kingsbury Methodist Church sanctuary: a white wood-sided building with a standing-seam metal roof, a cross at the peak, and a covered entry porch with a ramp, seen from the parking lot in morning light."
+       width="948" height="960">
+  <figcaption>Kingsbury Methodist Church &mdash; 7035 FM 2438, Kingsbury, Texas</figcaption>
+</figure>
 
 <main id="main">
 
@@ -291,6 +379,15 @@
       </address></p>
       <p>The church sits at the southeast corner of FM&nbsp;2438 and County Road&nbsp;227, roughly ten minutes east of Seguin.</p>
       <p><a class="btn btn-solid" href="https://www.google.com/maps/search/?api=1&amp;query=7035+FM+2438+Kingsbury+TX+78638">Open in Google Maps</a></p>
+
+      <div class="map-frame">
+        <iframe
+          title="Map showing Kingsbury Methodist Church at 7035 FM 2438, Kingsbury, Texas"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-97.8351%2C29.6398%2C-97.8191%2C29.6498&amp;layer=mapnik&amp;marker=29.6447536%2C-97.8270816"></iframe>
+      </div>
+      <p class="map-note"><a href="https://www.openstreetmap.org/?mlat=29.6447536&amp;mlon=-97.8270816#map=16/29.64475/-97.82708">View a larger map</a> &middot; map data &copy; OpenStreetMap contributors</p>
     </div>
   </section>
 
@@ -307,13 +404,35 @@
     </div>
   </section>
 
+  <section id="follow">
+    <div class="wrap">
+      <h2 class="section-title">Follow Along</h2>
+      <p>Photos, reels, and news from the congregation are posted on our Facebook page.</p>
+      <ul class="socials">
+        <li>
+          <a class="social-btn" href="https://www.facebook.com/p/Kingsbury-Methodist-Church-100094312150719/">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.96h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+            <span>Facebook<span class="sub">facebook.com/KingsburyMethodistChurch</span></span>
+          </a>
+        </li>
+        <!-- To add another account, copy one <li> block above and swap the
+             href, the <svg> path, and the label. Nothing else to change. -->
+      </ul>
+    </div>
+  </section>
+
 </main>
 
 <footer>
   <div class="wrap">
     <p><strong>Kingsbury Methodist Church</strong></p>
+    <a href="https://www.globalmethodist.org/">
+      <img class="gmc-mark" src="assets/gmc-logo-white.png"
+           alt="Global Methodist Church" width="450" height="82" loading="lazy">
+    </a>
     <p>A congregation of the <a href="https://www.globalmethodist.org/">Global Methodist Church</a>, Bexar District,
        <a href="https://midtexasgmc.org/">Mid Texas Conference</a>.</p>
+    <p><a href="https://www.facebook.com/p/Kingsbury-Methodist-Church-100094312150719/">Find us on Facebook</a></p>
     <p class="fine">7035 FM 2438, Kingsbury, TX 78638 &middot; (830) 639-4395</p>
   </div>
 </footer>
