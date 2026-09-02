@@ -3,7 +3,7 @@
 One-page website for Kingsbury Methodist Church — Kingsbury, Texas.
 A congregation of the Global Methodist Church, Bexar District, Mid Texas Conference.
 
-**Live site:** https://dougray.github.io/kingsbury-methodist-church/
+**Live site:** https://dougray.github.io/kmc-church/
 
 ## Structure
 
