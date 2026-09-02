@@ -50,3 +50,16 @@ That point is an unnamed place-of-worship node in OSM, matched to this church by
 position rather than by name — worth confirming the pin lands on the right
 building. The "Get Directions" and "Open in Google Maps" buttons use the street
 address, not these coordinates.
+
+## License
+
+The site's own code — `index.html` and everything in it — is MIT licensed. See
+`LICENSE`.
+
+**The MIT licence does not cover the contents of `assets/`,** which are not ours
+to relicense:
+
+- `church.jpg` belongs to Kingsbury Methodist Church.
+- `gmc-logo-white.png`, `gmc-logo.svg`, `favicon.svg`, and `apple-touch-icon.png`
+  are the Global Methodist Church trademark, used here as a member congregation.
+  Anyone reusing this code should swap in their own artwork.
